@@ -4,6 +4,9 @@ class CD:
 
     def purchase(self, quantity, credit_card):
         if self.stock >= quantity:
-            self.stock -= quantity
+            if credit_card.pay():
+                self.stock -= quantity
+            else:
+                pass
         else:
             pass
